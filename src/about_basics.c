@@ -46,7 +46,7 @@ Test(about_basics, variables)
         If you've had some experience with Java then C won't seem too foreign in
         terms of syntax
     */
-    char c = TODO;
+    char c = 67;
     cr_assert_eq(c, 'C',
         "All characters in C are interpreted from the ASCII "
         "table, go to your terminal and enter 'man ascii' to "
