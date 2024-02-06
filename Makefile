@@ -14,13 +14,14 @@ INC := -I $(INCDIR)
 EXEC := c_koans
 
 STD := gnu11
-CFLAGS := -std=$(STD) -Wall -Werror -Wno-unused-function -Wno-nonnull
+CFLAGS := -std=$(STD) -Wall -Werror -Wno-unused-function -Wno-nonnull -Wno-string-compare
 
 ifeq ($(shell uname),Darwin)
 CFLAGS += -I/opt/homebrew/include
-endif
-
+CRITERION := -L/opt/homebrew/lib -lcriterion
+else
 CRITERION := -lcriterion
+endif
 
 .PHONY: setup all clean
 
