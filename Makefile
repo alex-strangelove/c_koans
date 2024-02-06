@@ -16,6 +16,10 @@ EXEC := c_koans
 STD := gnu11
 CFLAGS := -std=$(STD) -Wall -Werror -Wno-unused-function -Wno-nonnull
 
+ifeq ($(shell uname),Darwin)
+CFLAGS += -I/opt/homebrew/include
+endif
+
 CRITERION := -lcriterion
 
 .PHONY: setup all clean
